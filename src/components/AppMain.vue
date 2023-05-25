@@ -1,11 +1,9 @@
 <script>
     import {store} from '../store';
-    import AppCardMovie from './AppCardMovie.vue';
-    import AppCardTv from './AppCardTv.vue';
+    import AppCard from './AppCard.vue'
     export default {
         components: {
-            AppCardMovie,
-            AppCardTv,
+            AppCard,
         },
         data(){
             return{
@@ -19,12 +17,38 @@
 
 <template>
     <main>
-        <div class="movies">
-            <AppCardMovie/>
+         <div class="movies">
+            <div class="movie">Movies</div>
+            <AppCard
+            v-for="(serie, i) in store.arrMovies"
+            :key="i"
+            :poster_path="serie.poster_path"
+            :title="serie.title"
+            :original="serie.original_title"
+            :language="serie.original_language"
+            :vote="serie.vote_average"
+        />
+        </div>
+        <div class="series">
+            <div class="serie">Series</div>
+            <AppCard
+            v-for="(serie, i) in store.arrSeries"
+            :key="i"
+            :poster_path="serie.poster_path"
+            :title="serie.name"
+            :original="serie.original_name"
+            :language="serie.original_language"
+            :vote="serie.vote_average"
+        />
+        </div>
+        
+        <!--<div class="movies">
+            <AppCardMovie
+            />
         </div>
         <div class="series">
             <AppCardTv/>
-        </div>
+        </div>  -->   
         <!-- <div v-for="movie in store.arrMovies" :key="index">
             
         </div>-->
@@ -37,13 +61,32 @@
     .movies{
         display: flex;
         flex-wrap: wrap;
+        .movie{
+            height: 5rem;
+            background-color: black;
+            color: white;
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
     }
 
     .series{
         margin-top: 3rem;
         display: flex;
         flex-wrap: wrap;
+        .serie{
+            height: 5rem;
+            background-color: black;
+            color: white;
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
         
     }
+        
         
 </style>
