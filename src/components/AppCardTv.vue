@@ -11,11 +11,11 @@
 
 
 <template>
-    <div class="card" v-for="(movie, index) in store.arrMovies" :key="index">
-        <span class="title">title: {{ movie.title }}</span>
-        <span class="original title">original title: {{ movie.original_title }}</span>
-        <span class="language">language: {{ movie.original_language }}</span>
-        <span class="vote">vote: {{ movie.vote_average }}</span>
+    <div class="card" v-for="(serie, index) in store.arrSeries" :key="index">
+        <span class="title">title: {{ serie.name }}</span>
+        <span class="original title">original title: {{ serie.original_name }}</span>
+        <span class="language">language: {{ serie.original_language }}</span>
+        <span class="vote">vote: {{ serie.vote_average }}</span>
     </div>
 </template>
 
@@ -24,7 +24,7 @@
 <style lang="scss" scoped>
 
     .card{
-        border: 1px solid black;
+        border: 1px solid red;
         display: flex;
         flex-direction: column;
         justify-content: center;

@@ -28,13 +28,21 @@ export default {
     requestFilteredMovies(){
       axios
         .get('https://api.themoviedb.org/3/search/movie', {
+          params: {
+            api_key: 'e99307154c6dfb0b4750f6603256716d',
+            query:  this.store.queryText,
+          },
+        })
+      .then((response) => (this.store.arrMovies = response.data.results));
+      axios
+      .get('https://api.themoviedb.org/3/search/tv', {
         params: {
           api_key: 'e99307154c6dfb0b4750f6603256716d',
           query:  this.store.queryText,
         },
       })
+      .then((response) => (this.store.arrSeries = response.data.results));   
 
-      .then((response) => (this.store.arrMovies = response.data.results))        
     }
 
   },

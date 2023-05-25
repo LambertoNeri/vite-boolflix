@@ -1,9 +1,11 @@
 <script>
     import {store} from '../store';
     import AppCardMovie from './AppCardMovie.vue';
+    import AppCardTv from './AppCardTv.vue';
     export default {
         components: {
             AppCardMovie,
+            AppCardTv,
         },
         data(){
             return{
@@ -20,7 +22,9 @@
         <div class="movies">
             <AppCardMovie/>
         </div>
-        <div class="series"></div>
+        <div class="series">
+            <AppCardTv/>
+        </div>
         <!-- <div v-for="movie in store.arrMovies" :key="index">
             
         </div>-->
@@ -33,6 +37,13 @@
     .movies{
         display: flex;
         flex-wrap: wrap;
+    }
+
+    .movies{
+        margin-top: 3rem;
+        display: flex;
+        flex-wrap: wrap;
         
     }
+        
 </style>
