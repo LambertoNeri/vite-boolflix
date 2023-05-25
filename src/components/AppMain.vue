@@ -39,7 +39,7 @@
         flex-wrap: wrap;
     }
 
-    .movies{
+    .series{
         margin-top: 3rem;
         display: flex;
         flex-wrap: wrap;
