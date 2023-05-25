@@ -1,7 +1,22 @@
 <script>
+import {store} from '../store'
+
 export default {
-    
+    data(){
+        return{
+            store,
+        };
+    },
+
+    methods: {
+        emitFunc() {
+            this.$emit('visualizeInputText');
+        },
+    },
 }
+
+    
+
 </script>
 
 
@@ -9,8 +24,10 @@ export default {
 <header>
     <h1>BOOLFIX</h1>
     <div>
-        <input type="text">
-        <button>vai!</button>
+        <input type="text" v-model="store.queryText">
+        <button @click="emitFunc">
+            vai!
+        </button>
     </div>
 </header>
 </template>
