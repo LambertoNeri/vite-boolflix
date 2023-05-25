@@ -41,17 +41,6 @@
             :vote="serie.vote_average"
         />
         </div>
-        
-        <!--<div class="movies">
-            <AppCardMovie
-            />
-        </div>
-        <div class="series">
-            <AppCardTv/>
-        </div>  -->   
-        <!-- <div v-for="movie in store.arrMovies" :key="index">
-            
-        </div>-->
     </main>
 </template>
 
