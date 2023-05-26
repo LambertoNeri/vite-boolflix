@@ -13,17 +13,11 @@
         data(){
             return{
             store,
+            starArray: [],
             };
         },
         methods: {
             languageFilter(data){
-                
-               /* axios
-                
-                    .get('https://flagsapi.com/IT/flat/32.png')
-                    .then((response) => this.store.flagObject = response)
-                return this.store.flagObject  */
-                    
                 if( data == 'en' ) {
                     return 'https://flagsapi.com/GB/flat/32.png'
                 } else if(data == 'ja') {
@@ -32,7 +26,20 @@
                 } else {
                     return 'https://flagsapi.com/'+data.toUpperCase()+'/shiny/32.png'
                 }  
-            } 
+            },
+            voteTransformation(data){
+                let baseFive;
+                baseFive = Math.trunc(data / 2 );
+                this.starArray = [];
+                for(let i = 0; i< baseFive; i++){
+                  this.starArray.push('<font-awesome-icon icon="fa-solid fa-star"/>') 
+                  console.log()
+                }
+                console.log(this.starArray)
+                return baseFive
+                
+            }
+                
         },
     }   
 </script>
@@ -45,7 +52,7 @@
         <span class="title">title: {{ title }}</span>
         <span class="original title">original title: {{ original }}</span>
         <span class="language"><img :src="languageFilter(language)" alt=""></span>
-        <span class="vote">vote: {{ vote }}</span>
+        <span class="vote">vote: {{voteTransformation(vote)}} {{ starArray }}  </span>
     </div>
 </template>
 
