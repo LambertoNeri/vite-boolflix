@@ -31,15 +31,15 @@
                 let baseFive;
                 baseFive = Math.trunc(data / 2 );
                 this.starArray = [];
-                for(let i = 0; i< baseFive; i++){
-                  this.starArray.push('<font-awesome-icon icon="fa-solid fa-star"/>') 
+               /* for(let i = 0; i< baseFive; i++){
+                  this.starArray.push(`<font-awesome-icon icon="fa-solid fa-star"/>`) 
                   console.log()
-                }
+                } */
                 console.log(this.starArray)
                 return baseFive
                 
-            }
-                
+            }   
+               
         },
     }   
 </script>
@@ -52,14 +52,21 @@
         <span class="title">title: {{ title }}</span>
         <span class="original title">original title: {{ original }}</span>
         <span class="language"><img :src="languageFilter(language)" alt=""></span>
-        <span class="vote">vote: {{voteTransformation(vote)}} {{ starArray }}  </span>
+        <div class="star-container">
+            voto: 
+            <span class="vote" v-for="(star, i) in 5" :key="i">
+                
+                <font-awesome-icon icon="fa-regular fa-star" v-if="voteTransformation(vote) < i +1 "/>
+                <font-awesome-icon icon="fa-solid fa-star" v-else/>
+            </span>
+        </div>
+        
     </div>
 </template>
+<!--<font-awesome-icon icon="fa-solid fa-star"/>
+{{voteTransformation(vote)}} {{ starArray }}-->
 
-
-
-<style lang="scss" scoped>
-
+<style lang="scss" scoped>    
     .card{
         display: flex;
         flex-direction: column;
@@ -68,6 +75,11 @@
         border: 1px black solid;
         span{
             text-align: center;
+        }
+        .star-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 
