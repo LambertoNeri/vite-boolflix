@@ -31,11 +31,6 @@
                 let baseFive;
                 baseFive = Math.trunc(data / 2 );
                 this.starArray = [];
-               /* for(let i = 0; i< baseFive; i++){
-                  this.starArray.push(`<font-awesome-icon icon="fa-solid fa-star"/>`) 
-                  console.log()
-                } */
-                console.log(this.starArray)
                 return baseFive
                 
             }   
@@ -63,8 +58,6 @@
         
     </div>
 </template>
-<!--<font-awesome-icon icon="fa-solid fa-star"/>
-{{voteTransformation(vote)}} {{ starArray }}-->
 
 <style lang="scss" scoped>    
     .card{

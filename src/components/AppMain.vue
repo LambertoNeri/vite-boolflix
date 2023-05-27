@@ -50,6 +50,9 @@
     .movies{
         display: flex;
         flex-wrap: wrap;
+        gap: 5rem;
+        justify-content: space-around;
+        background-color: #686868;
         .movie{
             height: 5rem;
             background-color: black;
@@ -65,6 +68,9 @@
         margin-top: 3rem;
         display: flex;
         flex-wrap: wrap;
+        gap: 5rem;
+        justify-content: space-around;
+        background-color: #686868;
         .serie{
             height: 5rem;
             background-color: black;
